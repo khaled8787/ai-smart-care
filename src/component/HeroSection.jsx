@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, Float, Text } from "@react-three/drei";
 import { Suspense } from "react";
 import Particles from "react-tsparticles";
+import AISmartCareBox from "./Aismartcarebox";
 
 const HeroSection = () => {
   return (
@@ -62,28 +63,7 @@ const HeroSection = () => {
         </div>
 
         {/* Right 3D Canvas */}
-        <div className="flex-1 w-full h-[400px] md:h-[500px]">
-          <Canvas camera={{ position: [0, 1, 4], fov: 50 }}>
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[5, 5, 5]} intensity={1} />
-            <Suspense fallback={null}>
-              <Float floatIntensity={0.5} rotationIntensity={0.3}>
-                <Text
-                  fontSize={1}
-                  color="#0ff"
-                  maxWidth={2}
-                  textAlign="center"
-                  anchorX="center"
-                  anchorY="middle"
-                >
-                  AI Care
-                </Text>
-              </Float>
-              <Environment preset="city" />
-            </Suspense>
-            <OrbitControls enableZoom={false} />
-          </Canvas>
-        </div>
+        <AISmartCareBox></AISmartCareBox>
       </div>
     </section>
   );
